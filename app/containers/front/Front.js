@@ -21,8 +21,7 @@ class Front extends Component{
     render(){
         return(
             <div>
-                <Menus/>
-                front
+                <Menus categories={this.props.categories}/>
             </div>
         )
     }
