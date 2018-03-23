@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import {bindActionCreators} from 'redux';
 import Menus from '../components/menu/Menus';
+import Banner from '../components/banner/Banner';
 import {actions} from '../../reducers/adminManagerTags';
 const {get_all_tags} =actions;
 
@@ -21,7 +22,20 @@ class Front extends Component{
     render(){
         return(
             <div>
-                <Menus categories={this.props.categories}/>
+               <div>
+                   <Menus categories={this.props.categories}/>
+                   <Banner/>
+               </div>
+                <div className={style.container}>
+                    <div className={style.contentContainer}>
+                        <div className={style.content}>
+
+                        </div>
+                        <div className={style.loginContainer}>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
