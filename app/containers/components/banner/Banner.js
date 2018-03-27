@@ -23,7 +23,7 @@ export default class Banner extends Component{
     }
     render(){
         return (
-            <Carousel autoplay>
+            <Carousel>
                 {this.renderCarousel(carsouelImgs)}
             </Carousel>
         )

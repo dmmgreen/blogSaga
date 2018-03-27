@@ -29,4 +29,7 @@ less@2.x 是OK的。
 
 less@3.x，需要开启 配置项 javascriptEnabled: true
 
-{ loader: 'less-loader', options: { javascriptEnabled: true } }
+{ loader: 'less-loader', options: { javascriptEnabled: true } 
+
+5、Missing class properties transform.
+安装babel-plugin-transform-class-properties，并且在babelrc中配置
