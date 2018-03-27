@@ -10,6 +10,7 @@ import {bindActionCreators} from 'redux';
 import Menus from '../components/menu/Menus';
 import Banner from '../components/banner/Banner';
 import Home from '../home';
+import Detail from '../detail/Detail';
 import {actions} from '../../reducers/adminManagerTags';
 const {get_all_tags} =actions;
 import {actions as FrontActions} from '../../reducers/frontReducer';
@@ -35,6 +36,7 @@ class Front extends Component{
                         <div className={style.content}>
                             <Switch>
                                 <Route exact path={url} component={Home}/>
+                                <Route path={`/detail/:id`} component={Detail}/>
                                 <Route path={`/:tag`} component={Home}/>
                             </Switch>
                         </div>

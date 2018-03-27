@@ -26,7 +26,7 @@ class Home extends Component{
                 <Redirect to="/404"/>
                 :
                 <div className={style.container}>
-                    <ArticleList data={this.props.articleList} getArticleDetail={this.props.get_article_detail}/>
+                    <ArticleList history={this.props.history} data={this.props.articleList} getArticleDetail={this.props.get_article_detail}/>
                     <div className={style.paginationContainer}>
                      <Pagination defaultPageSize={5} current={this.props.pageNum} total={this.props.total}
                                  onChange={(pageNum)=>{

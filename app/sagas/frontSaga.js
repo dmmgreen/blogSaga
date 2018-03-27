@@ -23,20 +23,20 @@ export function *getArticleListFlow() {
                 res.data.pageNum=req.pageNum;
                 yield  put({type:FrontActionTypes.RESPONSE_ARTICLE_LIST,data:res.data});
             }else{
-                yield put({type: IndexActionTypes.SET_MESSAGE, msgContent: res.message, msgType: 0});
+                yield put({type: IndexActionType.SET_MESSAGE, msgContent: res.message, msgType: 0});
             }
         }
     }
 }
 
-export function * getArticleDetail(id) {
-    yield put({type: IndexActionTypes.FETCH_START});
+export function* getArticleDetail(id) {
+    yield put({type: IndexActionType.FETCH_START});
     try {
         return yield call(get, `/getArticleDetail?id=${id}`);
     } catch (err) {
-        yield put({type: IndexActionTypes.SET_MESSAGE, msgContent: '网络请求错误', msgType: 0});
+        yield put({type: IndexActionType.SET_MESSAGE, msgContent: '网络请求错误', msgType: 0});
     } finally {
-        yield put({type: IndexActionTypes.FETCH_END})
+        yield put({type: IndexActionType.FETCH_END})
     }
 }
 
@@ -48,7 +48,7 @@ export function* getArticleDetailFlow () {
             if(res.code === 0){
                 yield put({type: FrontActionTypes.RESPONSE_ARTICLE_DETAIL,data:res.data});
             }else{
-                yield put({type: IndexActionTypes.SET_MESSAGE, msgContent: res.message, msgType: 0});
+                yield put({type: IndexActionType.SET_MESSAGE, msgContent: res.message, msgType: 0});
             }
         }
     }
