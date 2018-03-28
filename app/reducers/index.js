@@ -22,6 +22,34 @@ export const actionsTypes={
     USER_AUTH:'USER_AUTH'
 };
 
+export const actions={
+    get_login:function (username, password) {
+        return {
+            type:actionsTypes.USER_LOGIN,
+            username,
+            password
+        }
+    },
+    get_register:function (data) {
+        return {
+            type:actionsTypes.USER_REGISTER,
+            data
+        }
+    },
+    clear_msg:function () {
+        return {
+            type:actionsTypes.SET_MESSAGE,
+            msgType:1,
+            msgContent:''
+        }
+    },
+    user_auth:function () {
+        return {
+            type:actionsTypes.USER_AUTH
+        }
+    }
+};
+
 export function reducer(state = initialState, action) {
     switch (action.type){
         case actionsTypes.FETCH_START:

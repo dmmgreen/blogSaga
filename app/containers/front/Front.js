@@ -11,10 +11,13 @@ import Menus from '../components/menu/Menus';
 import Banner from '../components/banner/Banner';
 import Home from '../home';
 import Detail from '../detail/Detail';
+import Logined from '../home/components/logined/Logined';
+import Login from '../home/components/login/Login';
 import {actions} from '../../reducers/adminManagerTags';
 const {get_all_tags} =actions;
 import {actions as FrontActions} from '../../reducers/frontReducer';
 const {get_article_list} =FrontActions;
+import {actions as IndexActions} from '../../reducers/index';
 
 class Front extends Component{
     constructor(props){
@@ -25,6 +28,7 @@ class Front extends Component{
     }
     render(){
         const {url}=this.props.match;
+        const {login,register}=this.props;
         return(
             <div>
                <div>
@@ -41,7 +45,12 @@ class Front extends Component{
                             </Switch>
                         </div>
                         <div className={style.loginContainer}>
-
+                            {
+                                this.props.userInfo.userId ?
+                                    <Logined history={this.props.history} userInfo={this.props.userInfo} />
+                                    :
+                                    <Login login={login} register={register}/>
+                            }
                         </div>
                     </div>
                 </div>
@@ -49,6 +58,7 @@ class Front extends Component{
         )
     }
 }
+
 Front.defaultProps={
     categories:[]
 };
@@ -57,14 +67,17 @@ Front.propTypes={
 };
 function mapStateToProps(state) {
     return {
-        categories:state.admin.tags
+        categories:state.admin.tags,
+        userInfo:state.globalState.userInfo
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         get_all_tags:bindActionCreators(get_all_tags,dispatch),
-        get_article_list:bindActionCreators(get_article_list,dispatch)
+        get_article_list:bindActionCreators(get_article_list,dispatch),
+        login:bindActionCreators(IndexActions.get_login,dispatch),
+        register:bindActionCreators(IndexActions.get_register,dispatch)
     }
 }
 
