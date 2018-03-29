@@ -27,20 +27,24 @@ export function* register(data) {
 
 
 export function* loginFlow() {
-    let request=yield take(IndexActionTypes.USER_LOGIN);
-    let response=yield call(login,request.username,request.password);
-    if(response && response.code === 0){
-        yield put({type:IndexActionTypes.SET_MESSAGE,msgContent:'登录成功!',msgType:1});
-        yield put({type:IndexActionTypes.RESPONSE_USER_INFO,data:response.data});
+    while (true){
+        let request=yield take(IndexActionTypes.USER_LOGIN);
+        let response=yield call(login,request.username,request.password);
+        if(response && response.code === 0){
+            yield put({type:IndexActionTypes.SET_MESSAGE,msgContent:'登录成功!',msgType:1});
+            yield put({type:IndexActionTypes.RESPONSE_USER_INFO,data:response.data});
+        }
     }
 }
 
 export function* registerFlow() {
-    let request =yield take(IndexActionTypes.USER_REGISTER);
-    let response=yield call(register,request.data);
-    if(response && response.code === 0){
-        yield put({type:IndexActionTypes.SET_MESSAGE,msgContent:'注册成功!',msgType:1});
-        yield put({type:IndexActionTypes.RESPONSE_USER_INFO,data:response.data})
+    while (true) {
+        let request = yield take(IndexActionTypes.USER_REGISTER);
+        let response = yield call(register, request.data);
+        if (response && response.code === 0) {
+            yield put({type: IndexActionTypes.SET_MESSAGE, msgContent: '注册成功!', msgType: 1});
+            yield put({type: IndexActionTypes.RESPONSE_USER_INFO, data: response.data})
+        }
     }
 }
 

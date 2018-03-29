@@ -13,6 +13,7 @@ export default class Banner extends Component{
     constructor(props){
         super(props);
         this.shouldComponentUpdate=PureRenderMixin.shouldComponentUpdate.bind(this);
+        this.renderCarousel = this.renderCarousel.bind(this);
     }
     renderCarousel(imgs){
         return imgs.map((item,index)=>(
