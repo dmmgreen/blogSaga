@@ -10,7 +10,9 @@ import {bindActionCreators} from 'redux';
 import {notification} from 'antd';
 import './reset.css';
 import Front from './front/Front';
+import Admin from './admin/Admin';
 import {Loading} from './components/loading/Loading';
+import NotFound from '../components/notFound/NotFound';
 import {actions} from '../reducers';
 const {clear_msg,user_auth}=actions;
 
@@ -39,6 +41,8 @@ class AppIndex extends Component{
             <Router>
                 <div>
                     <Switch>
+                        <Route path="/404" component={NotFound}/>
+                        <Route path="/admin" component={Admin}/>
                         <Route component={Front}/>
                     </Switch>
                     {isFetching && <Loading/>}
