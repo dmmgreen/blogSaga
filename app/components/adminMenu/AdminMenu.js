@@ -20,7 +20,7 @@ export default class AdminMenu extends Component{
                 <Menu selectedKeys={[this.props.url]}
                       mode="inline"
                       theme="dark"
-                      onClick={(key)=>{
+                      onClick={({key})=>{
                           this.props.changeUrl(key);
                           this.props.history.push(`/admin${key}`);
                       }}

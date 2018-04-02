@@ -8,6 +8,7 @@ import style from './style.css';
 import NotFound from "../../components/notFound/NotFound";
 import AdminMenu from '../../components/adminMenu/AdminMenu';
 import AdminIndex from '../adminIndex/AdminIndex';
+import AdminManagerUser from '../adminManagerUser/AdminManagerUser';
 import {actions} from '../../reducers/admin';
 const {change_location_admin}=actions;
 
@@ -17,7 +18,7 @@ class Admin extends Component{
         this.shouldComponentUpdate=PureRenderMixin.shouldComponentUpdate.bind(this);
     }
     componentWillReceiveProps(){
-        this.props.change_location_admin(window.location.pathname.replace(/\admin/,"") || "/")
+        this.props.change_location_admin(window.location.pathname.replace(/\/admin/,"") || "/")
     }
     render(){
         const {url}=this.props.match;
@@ -33,6 +34,7 @@ class Admin extends Component{
                                 <div className={style.contentContainer}>
                                     <Switch>
                                         <Route exact path={url} component={AdminIndex}/>
+                                        <Route path={`${url}/managerUser`} component={AdminManagerUser}/>
                                     </Switch>
 
                                 </div>
