@@ -14,7 +14,7 @@ export function * getArticleList(tag, pageNum) {
     }
 }
 
-export function *getArticleListFlow() {
+export function *getArticlesListFlow() {
     while (true) {
         let req = yield take(FrontActionTypes.GET_ARTICLE_LIST);
         let res=yield call(getArticleList,req.tag,req.pageNum);

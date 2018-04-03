@@ -1,5 +1,5 @@
 import React,{Component,PropTypes} from 'react';
-import PureRenderMixiin from 'react-addons-pure-render-mixin';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {
     BrowserRouter as Router,
     Route,
@@ -20,7 +20,7 @@ class AppIndex extends Component{
     constructor(props){
         super(props);
         this.openNotification=this.openNotification.bind(this);
-        this.shouldComponentUpdate=PureRenderMixiin.shouldComponentUpdate.bind(this);
+        this.shouldComponentUpdate=PureRenderMixin.shouldComponentUpdate.bind(this);
     }
     componentDidMount(){
         this.props.user_auth();

@@ -58,14 +58,14 @@ router.get('/delArticle',function (req, res) {
     let id=req.query.id;
     Article.remove({_id:id})
         .then(result=>{
-            if(result.result.n===1){
+            if(result.n === 1){
                 responseClient(res,200,0,'文章删除成功');
             }else{
                 responseClient(res,200,1,'文章不存在');
             }
         }).catch(err=>{
         responseClient(res);
-    })
+    });
 });
 
 

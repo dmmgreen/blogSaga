@@ -46,7 +46,8 @@ class Front extends Component{
                         </div>
                         <div className={style.loginContainer}>
                             {
-                                this.props.userInfo.userId ?
+                                this.props.userInfo.userId
+                                    ?
                                     <Logined history={this.props.history} userInfo={this.props.userInfo} />
                                     :
                                     <Login login={login} register={register}/>
