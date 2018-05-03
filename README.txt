@@ -1,21 +1,21 @@
-1¡¢°²×°babel-polyfill
-·ñÔòÌáÊ¾´íÎósaga²¿·Ö,ReferenceError: regeneratorRuntime is not defined
+1ã€å®‰è£…babel-polyfill
+å¦åˆ™æç¤ºé”™è¯¯sagaéƒ¨åˆ†,ReferenceError: regeneratorRuntime is not defined
 
-2¡¢apiServer/ÔËĞĞÊı¾İ¿â
-   server/indexÔòÊÇÔËĞĞÆğÏàÍ¬Óò¿ÉÒÔ·ÃÎÊ
+2ã€apiServer/è¿è¡Œæ•°æ®åº“
+   server/indexåˆ™æ˜¯è¿è¡Œèµ·ç›¸åŒåŸŸå¯ä»¥è®¿é—®
 
-3¡¢http-proxyÊµÏÖ·´Ïò´úÀí£¬ÓÃÓÚ·şÎñ¶Ë¿Ú±»Õ¼ÓÃ£¬·Ö·¢¶Ë¿Ú
+3ã€http-proxyå®ç°åå‘ä»£ç†ï¼Œç”¨äºæœåŠ¡ç«¯å£è¢«å ç”¨ï¼Œåˆ†å‘ç«¯å£
 
-   webpack Èë¿ÚÅäÖÃ
+   webpack å…¥å£é…ç½®
 
    `webpack-hot-middleware/client?path=http://${config.host}:${config.port}/__webpack_hmr`,
 
-   webpack pluginsÅäÖÃ
+   webpack pluginsé…ç½®
    new webpack.HotModuleReplacementPlugin()
 
-   server.jsÅäÖÃ
+   server.jsé…ç½®
  
-4¡¢Ê¹ÓÃless°æ±¾²»Í¬³öÏÖ£¬
+4ã€ä½¿ç”¨lessç‰ˆæœ¬ä¸åŒå‡ºç°ï¼Œ
 
 Module build failed:
 
@@ -25,15 +25,17 @@ Module build failed:
 Inline JavaScript is not enabled. Is it set in your options?
 
 
-less@2.x ÊÇOKµÄ¡£
+less@2.x æ˜¯OKçš„ã€‚
 
-less@3.x£¬ĞèÒª¿ªÆô ÅäÖÃÏî javascriptEnabled: true
+less@3.xï¼Œéœ€è¦å¼€å¯ é…ç½®é¡¹ javascriptEnabled: true
 
 { loader: 'less-loader', options: { javascriptEnabled: true } 
 
-5¡¢Missing class properties transform.
-°²×°babel-plugin-transform-class-properties£¬²¢ÇÒÔÚbabelrcÖĞÅäÖÃ
+5ã€Missing class properties transform.
+å®‰è£…babel-plugin-transform-class-propertiesï¼Œå¹¶ä¸”åœ¨babelrcä¸­é…ç½®
 
 
-6¡¢ÏêÇéÒ³Ò»Ö±ÏÔÊ¾404
-ÒòÎª/:tagsÂ·ÓÉÔÚÏêÇéÖ®Ç°£¬ÒÑ¾­±»Æ¥ÅäÁË
+6ã€è¯¦æƒ…é¡µä¸€ç›´æ˜¾ç¤º404
+å› ä¸º/:tagsè·¯ç”±åœ¨è¯¦æƒ…ä¹‹å‰ï¼Œå·²ç»è¢«åŒ¹é…äº†
+
+7ã€requierå¼•ç”¨imgï¼Œéœ€è¦å®‰è£…file-loader
